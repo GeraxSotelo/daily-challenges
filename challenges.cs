@@ -35,3 +35,28 @@ public static int diagonalDifference(List<List<int>> arr)
   }
   return Math.Abs(ld - rd);
 }
+
+// 03/04/2020
+// Given an array of integers, calculate the fractions of its elements that are positive, negative, and are zeros. Print the decimal value of each fraction on a new line.
+// For example, given the array arr=[1,1,0,-1,-1] there are 5 elements, two positive, two negative and one zero. Their ratios would be 2/5=0.400000, 2/5=0.400000 and 1/5=0.200000.
+    static void plusMinus(int[] arr) {
+        decimal arrLength = arr.Length;
+        decimal pos = 0;
+        decimal neg = 0;
+        decimal zero = 0;
+        for(int i = 0; i < arr.Length; i++) {
+            if(arr[i] > 0) {
+                pos++;
+            } else if (arr[i] < 0) {
+                neg++;
+            } else {
+                zero++;
+            }
+        }
+        decimal posdec = pos/arrLength;
+        decimal negdec = neg/arrLength;
+        decimal zerodec = zero/arrLength;
+        Console.WriteLine(Math.Round(posdec, 6));
+        Console.WriteLine(Math.Round(negdec, 6));
+        Console.WriteLine(Math.Round(zerodec, 6));
+    }
