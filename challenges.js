@@ -58,3 +58,24 @@ function plusMinus(arr) {
     '\n' + (neg / length).toFixed(6) +
     '\n' + (zero / length).toFixed(6));
 }
+
+
+// Write a program that prints a staircase of size n.Observe that its base and height are both equal to n, and the image is drawn using # symbols and spaces. The last line is not preceded by any spaces.
+//    #
+//   ##
+//  ###
+// ####
+function staircase(n) {
+  let hashTemp = '#';
+  let spaceTemp = '';
+  let count = n;
+  for (let i = 1; i <= n; i++) {
+    for (let j = 1; j < count; j++) {
+      spaceTemp += ' ';
+    }
+    count--;
+    console.log(spaceTemp + hashTemp);
+    hashTemp += '#'
+    spaceTemp = '';
+  }
+}
