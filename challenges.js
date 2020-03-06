@@ -79,3 +79,21 @@ function staircase(n) {
     spaceTemp = '';
   }
 }
+
+// Write a function in JavaScript that can be passed a string, and returns a string that can be made to contain either all the odd or all the even characters from the input.
+function evenOrOdd(str, option) {
+  if (!option) {
+    console.log("Enter even or odd");
+  } else {
+    option = option.toLowerCase().trim();
+    let strArr = str.split("");
+    if (option == "even") {
+      return strArr.filter((elem, i) => (i + 1) % 2 == 0).join("");
+    } else if (option == "odd") {
+      return strArr.filter((elem, i) => (i + 1) % 2 != 0).join("");
+    } else {
+      console.log("Enter even or odd");
+      return;
+    }
+  }
+}
