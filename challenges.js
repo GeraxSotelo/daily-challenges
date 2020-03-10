@@ -22,7 +22,7 @@ function aVeryBigSum(arr) {
 function diagonalDifference(arr) {
   let ld = 0
   let rd = 0
-  for (let up = 0, down = arr.length - 1; up < arr.length && down >= 0; up++ , down--) {
+  for (let up = 0, down = arr.length - 1; up < arr.length && down >= 0; up++, down--) {
     ld += arr[up][up];
     rd += arr[up][down];
   }
@@ -59,7 +59,6 @@ function plusMinus(arr) {
     '\n' + (zero / length).toFixed(6));
 }
 
-
 // Write a program that prints a staircase of size n.Observe that its base and height are both equal to n, and the image is drawn using # symbols and spaces. The last line is not preceded by any spaces.
 //    #
 //   ##
@@ -80,6 +79,7 @@ function staircase(n) {
   }
 }
 
+// 03/05/2020
 // Write a function in JavaScript that can be passed a string, and returns a string that can be made to contain either all the odd or all the even characters from the input.
 function evenOrOdd(str, option) {
   if (!option) {
@@ -96,4 +96,14 @@ function evenOrOdd(str, option) {
       return;
     }
   }
+}
+
+// 03/10/2020
+// Given five positive integers, find the minimum and maximum values that can be calculated by summing exactly four of the five integers. Then print the respective minimum and maximum values as a single line of two, space-separated long integers.
+// For example, arr = [1, 3, 5, 7, 9]. Our minimum sum is 1 + 3 + 5 + 7 = 16 and our maximum sum is 3 + 5 + 7 + 9 = 24. We would print 16 24
+function miniMaxSum(arr) {
+  let total = arr.reduce((sum, num) => sum + num);
+  let max = total - Math.min(...arr);
+  let min = total - Math.max(...arr);
+  console.log(min + " " + max);
 }

@@ -90,3 +90,15 @@ static void staircase(int n)
     spaceTemp = "";
   }
 }
+
+// 03/10/2020
+// Given five positive integers, find the minimum and maximum values that can be calculated by summing exactly four of the five integers. Then print the respective minimum and maximum values as a single line of two, space-separated long integers.
+// For example, arr = [1, 3, 5, 7, 9]. Our minimum sum is 1 + 3 + 5 + 7 = 16 and our maximum sum is 3 + 5 + 7 + 9 = 24. We would print 16 24
+static void miniMaxSum(int[] arr)
+{
+  // convert int array to long array
+  long[] longArr = Array.ConvertAll(arr, num => (long)num);
+  long min = longArr.Sum() - longArr.Max();
+  long max = longArr.Sum() - longArr.Min();
+  Console.WriteLine(min + " " + max);
+}
