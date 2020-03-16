@@ -126,15 +126,19 @@ function getMaxThreeDigits(str) {
 // Count the number of characters in a string and return an object with the results.
 function countCharacters(str) {
   let obj = {};
-  for (let i = 0; i < str.length; i++) {
-    if (!obj.hasOwnProperty(str.charAt(i))) {
-      obj[str.charAt(i)] = 1;
+  if (str.match(/^[0-9a-zA-Z]+$/)) {
+    for (let i = 0; i < str.length; i++) {
+      if (!obj.hasOwnProperty(str.charAt(i))) {
+        obj[str.charAt(i)] = 1;
+      }
+      else {
+        obj[str.charAt(i)] += 1;
+      }
     }
-    else {
-      obj[str.charAt(i)] += 1;
-    }
+    return obj;
+  } else {
+    console.log("Enter letters or numbers only");
   }
-  return obj;
 }
 
 function countCharacters(str) {
