@@ -121,3 +121,32 @@ function getMaxThreeDigits(str) {
   }
   return max;
 }
+
+// 03/16/2020
+// Count the number of characters in a string and return an object with the results.
+function countCharacters(str) {
+  let obj = {};
+  for (let i = 0; i < str.length; i++) {
+    if (!obj.hasOwnProperty(str.charAt(i))) {
+      obj[str.charAt(i)] = 1;
+    }
+    else {
+      obj[str.charAt(i)] += 1;
+    }
+  }
+  return obj;
+}
+
+function countCharacters(str) {
+  let obj = {};
+  if (str.match(/^[0-9a-zA-z]+$/)) {
+    for (let i = 0; i < str.length; i++) {
+      let el = str.charAt(i);
+      !obj[el] ? obj[el] = 1 : obj[el] += 1;
+    }
+    return obj;
+  }
+  else {
+    console.log("Enter letters or numbers only");
+  }
+}
