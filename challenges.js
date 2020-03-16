@@ -107,3 +107,17 @@ function miniMaxSum(arr) {
   let min = total - Math.max(...arr);
   console.log(min + " " + max);
 }
+
+// 03/15/2020
+// Given a string of numbers, find the maximum three digit set of numbers.
+function getMaxThreeDigits(str) {
+  let max = 0;
+  for (let i = 0; i < str.length; i++) {
+    let temp = str.slice(i, i + 3);
+    let int = parseInt(temp);
+    if (int > max) {
+      max = int;
+    }
+  }
+  return max;
+}
