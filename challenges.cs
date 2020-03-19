@@ -102,3 +102,21 @@ static void miniMaxSum(int[] arr)
   long max = longArr.Sum() - longArr.Min();
   Console.WriteLine(min + " " + max);
 }
+
+// 03/19/2020
+// A cake will have one candle for each year of your niece's total age. She’ll only be able to blow out the tallest candles. Your task is to find out how many candles she can successfully blow out.
+// For example, if she is turning 4 years old, and the cake will have 4 candles of height 4, 4, 1, 3, she will be able to blow out 2 candles successfully, since the tallest candles are of height 4 and there are 2 such candles.
+static int birthdayCakeCandles(int[] ar)
+{
+  int max = ar.Max();
+  int count = 0;
+  foreach (int i in ar)
+  {
+    if (i == max)
+    {
+      count++;
+    }
+  }
+  return count;
+}
+

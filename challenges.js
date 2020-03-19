@@ -154,3 +154,11 @@ function countCharacters(str) {
     console.log("Enter letters or numbers only");
   }
 }
+
+// 03/19/2020
+// A cake will have one candle for each year of your niece's total age. She’ll only be able to blow out the tallest candles. Your task is to find out how many candles she can successfully blow out.
+// For example, if she is turning 4 years old, and the cake will have 4 candles of height 4, 4, 1, 3, she will be able to blow out 2 candles successfully, since the tallest candles are of height 4 and there are 2 such candles.
+function birthdayCakeCandles(ar) {
+  let max = Math.max(...ar);
+  return ar.filter(i => i == max).length
+}
