@@ -162,3 +162,62 @@ function birthdayCakeCandles(ar) {
   let max = Math.max(...ar);
   return ar.filter(i => i == max).length
 }
+
+// 03/21/2020
+//Given a time in 12-hour AM/PM format, convert it to military (24-hour) time.
+//Note: Midnight is 12:00:00AM on a 12-hour clock, and 00:00:00 on a 24-hour clock. Noon is 12:00:00PM on a 12-hour clock, and 12:00:00 on a 24-hour clock.
+function timeConversion(s) {
+  let sArr = s.slice(0, -2).split(":");
+  let dayType = s.slice(-2).toLowerCase();
+  let hh = parseInt(sArr[0]);
+  let mm = parseInt(sArr[1]);
+  let ss = parseInt(sArr[2]);
+  if ((hh > 0 && hh <= 12 && mm >= 0 && mm <= 59 && ss >= 0 && ss <= 59) && (dayType == "pm" || dayType == "am")) {
+    if (dayType == "pm") {
+      hh = hh + 12;
+      if (hh == 24) {
+        hh = "12";
+      }
+    } else {
+      if (hh < 10) {
+        hh = "0" + hh.toString();
+      } else if (hh == 12) {
+        hh = "00";
+      }
+    }
+    if (mm < 10) {
+      mm = "0" + mm.toString();
+    }
+    if (ss < 10) {
+      ss = "0" + ss.toString();
+    }
+    return [hh, mm, ss].join(":");
+  } else {
+    return console.log("Incorrect input");
+  }
+}
+
+function timeConversion(s) {
+  let sArr = s.slice(0, -2).split(":");
+  let dayType = s.slice(-2).toLowerCase();
+  let hh = parseInt(sArr[0]);
+  let mm = parseInt(sArr[1]);
+  let ss = parseInt(sArr[2]);
+  if ((hh > 0 && hh <= 12 && mm >= 0 && mm <= 59 && ss >= 0 && ss <= 59) && (dayType == "pm" || dayType == "am")) {
+    switch (dayType) {
+      case "pm":
+        hh = hh + 12;
+        hh = hh == 24 ? "12" : hh;
+        break;
+      case "am":
+        hh = hh < 10 ? "0" + hh.toString() : hh == 12 ? "00" : hh;
+        break;
+    }
+    mm = mm < 10 ? "0" + mm.toString() : mm
+    ss = ss < 10 ? "0" + ss.toString() : ss
+
+    return [hh, mm, ss].join(":");
+  } else {
+    return console.log("Incorrect input");
+  }
+}
